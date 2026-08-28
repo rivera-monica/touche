@@ -2,6 +2,7 @@
 
 import type { CSSProperties } from 'react';
 import type { Candle } from '@/lib/types';
+import { MAX_SEASONAL_TAGS } from '@/lib/types';
 import {
   contrastText,
   findByNumber,
@@ -92,11 +93,16 @@ export default function CandleCard({
         <span className={'badge ' + statusClass(c.primary_status)}>
           {c.primary_status || '—'}
         </span>
-        {c.secondary_status ? (
-          <span className={'badge secondary ' + secondaryClass(c.secondary_status)}>
-            {c.secondary_status}
+        {(c.secondary_statuses || []).map((status, i) => (
+          <span className={'badge secondary ' + secondaryClass(status)} key={i + status}>
+            {status}
           </span>
-        ) : null}
+        ))}
+        {(c.seasonal_tags || []).slice(0, MAX_SEASONAL_TAGS).map((tag, i) => (
+          <span className="badge seasonal" key={i + tag}>
+            {tag}
+          </span>
+        ))}
       </div>
 
       <div className="card-family" style={{ color: hasLabel ? soft : 'var(--ink-soft)' }}>

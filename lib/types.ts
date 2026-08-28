@@ -37,10 +37,21 @@ export type Candle = {
   font_override_hex: string | null;
   launch_phase: LaunchPhase | null;
   primary_status: string;
-  secondary_status: string;
+  secondary_statuses: string[];
   derived_from: string;
+  seasonal_tags: string[];
   created_at: string;
   updated_at: string;
 };
 
 export type CandleDraft = Omit<Candle, 'id' | 'created_at' | 'updated_at' | 'sort_order'>;
+
+export const MAX_SEASONAL_TAGS = 3;
+
+export const SORT_OPTIONS = [
+  { value: 'name', label: 'Name (A–Z)' },
+  { value: 'number', label: 'Candle number' },
+  { value: 'launch_phase', label: 'Launch phase' },
+  { value: 'updated_at', label: 'Recently updated' },
+] as const;
+export type SortKey = (typeof SORT_OPTIONS)[number]['value'];

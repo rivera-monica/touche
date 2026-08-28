@@ -2,14 +2,14 @@
 
 import { useState } from 'react';
 import type { Candle, CandleDraft } from '@/lib/types';
-import { PRIMARY_STATUSES, SECONDARY_STATUSES } from '@/lib/types';
+import { MAX_SEASONAL_TAGS, PRIMARY_STATUSES, SECONDARY_STATUSES } from '@/lib/types';
 import { getChildren } from '@/lib/candleHelpers';
 
 interface FormState {
   number: string;
   name: string;
   primary_status: string;
-  secondary_status: string;
+  secondary_statuses: string[];
   final_stamp: string;
   family: string;
   derived_from: string;
@@ -22,6 +22,7 @@ interface FormState {
   tempCombined: string;
   depth: string;
   notes: string;
+  seasonal_tags: string[];
 }
 
 function toFormState(c: Candle | CandleDraft): FormState {
@@ -29,7 +30,7 @@ function toFormState(c: Candle | CandleDraft): FormState {
     number: c.number,
     name: c.name,
     primary_status: c.primary_status || 'Pending Creation',
-    secondary_status: c.secondary_status || '',
+    secondary_statuses: c.secondary_statuses || [],
     final_stamp: c.final_stamp,
     family: c.family,
     derived_from: c.derived_from || '',
@@ -42,6 +43,7 @@ function toFormState(c: Candle | CandleDraft): FormState {
     tempCombined: (c.pour_temp || '') + (c.add_temp ? ' / ' + c.add_temp : ''),
     depth: c.depth,
     notes: c.notes,
+    seasonal_tags: c.seasonal_tags || [],
   };
 }
 
@@ -88,6 +90,26 @@ export default function CandleModal({
     setForm((f) => ({ ...f, ingredients: [...f.ingredients, ''] }));
   }
 
+  function updateSeasonalTag(i: number, value: string) {
+    setForm((f) => {
+      const next = [...f.seasonal_tags];
+      next[i] = value;
+      return { ...f, seasonal_tags: next };
+    });
+  }
+
+  function removeSeasonalTag(i: number) {
+    setForm((f) => ({ ...f, seasonal_tags: f.seasonal_tags.filter((_, idx) => idx !== i) }));
+  }
+
+  function addSeasonalTag() {
+    setForm((f) =>
+      f.seasonal_tags.length >= MAX_SEASONAL_TAGS
+        ? f
+        : { ...f, seasonal_tags: [...f.seasonal_tags, ''] }
+    );
+  }
+
   async function handleSave() {
     setSaving(true);
     try {
@@ -96,7 +118,7 @@ export default function CandleModal({
         number: form.number.trim(),
         name: form.name.trim(),
         primary_status: form.primary_status.trim(),
-        secondary_status: form.secondary_status.trim(),
+        secondary_statuses: form.secondary_statuses,
         final_stamp: form.final_stamp.trim(),
         family: form.family.trim(),
         derived_from: form.derived_from.trim(),
@@ -110,6 +132,7 @@ export default function CandleModal({
         add_temp: add || '',
         depth: form.depth.trim(),
         notes: form.notes.trim(),
+        seasonal_tags: form.seasonal_tags.map((t) => t.trim()).filter(Boolean).slice(0, MAX_SEASONAL_TAGS),
         pending_retest: false,
       };
       await onSave(draft, candle ? candle.id : null);
@@ -173,34 +196,73 @@ export default function CandleModal({
           <div className="field"></div>
         </div>
 
-        <div className="row2">
-          <div className="field">
-            <label>Primary status</label>
-            <select
-              value={form.primary_status}
-              onChange={(e) => updateField('primary_status', e.target.value)}
-            >
-              {PRIMARY_STATUSES.map((s) => (
-                <option key={s} value={s}>
-                  {s}
-                </option>
-              ))}
-            </select>
+        <div className="field">
+          <label>Seasonal tags</label>
+          <div>
+            {form.seasonal_tags.map((tag, i) => (
+              <div className="ing-row" key={i}>
+                <input
+                  type="text"
+                  placeholder="e.g. Holiday"
+                  value={tag}
+                  onChange={(e) => updateSeasonalTag(i, e.target.value)}
+                />
+                <button
+                  className="ing-remove"
+                  type="button"
+                  onClick={() => removeSeasonalTag(i)}
+                >
+                  &times;
+                </button>
+              </div>
+            ))}
           </div>
-          <div className="field">
-            <label>Secondary status</label>
-            <select
-              value={form.secondary_status}
-              onChange={(e) => updateField('secondary_status', e.target.value)}
+          {form.seasonal_tags.length < MAX_SEASONAL_TAGS ? (
+            <button
+              className="btn ghost"
+              type="button"
+              style={{ marginTop: '4px' }}
+              onClick={addSeasonalTag}
             >
-              <option value="">— None —</option>
-              {SECONDARY_STATUSES.map((s) => (
-                <option key={s} value={s}>
-                  {s}
-                </option>
-              ))}
-            </select>
-          </div>
+              + Add tag
+            </button>
+          ) : (
+            <div className="field-hint">Limit of {MAX_SEASONAL_TAGS} tags</div>
+          )}
+        </div>
+
+        <div className="field">
+          <label>Primary status</label>
+          <select
+            value={form.primary_status}
+            onChange={(e) => updateField('primary_status', e.target.value)}
+          >
+            {PRIMARY_STATUSES.map((s) => (
+              <option key={s} value={s}>
+                {s}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        <div className="field">
+          <label>Secondary statuses</label>
+          <select
+            multiple
+            size={SECONDARY_STATUSES.length}
+            value={form.secondary_statuses}
+            onChange={(e) => {
+              const values = Array.from(e.target.selectedOptions, (o) => o.value);
+              updateField('secondary_statuses', values);
+            }}
+          >
+            {SECONDARY_STATUSES.map((s) => (
+              <option key={s} value={s}>
+                {s}
+              </option>
+            ))}
+          </select>
+          <div className="field-hint">Hold ⌘/Ctrl (or Shift for a range) to select more than one.</div>
         </div>
 
         <div className="field">
@@ -341,7 +403,7 @@ function blankDraft(): CandleDraft {
     number: '',
     name: '',
     primary_status: 'Pending Creation',
-    secondary_status: '',
+    secondary_statuses: [],
     final_stamp: '',
     family: '',
     depth: '',
@@ -360,5 +422,6 @@ function blankDraft(): CandleDraft {
     color_override_hex: null,
     font_override_hex: null,
     launch_phase: null,
+    seasonal_tags: [],
   };
 }

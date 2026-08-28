@@ -1,4 +1,4 @@
-import type { Candle, LaunchPhase } from './types';
+import type { Candle, LaunchPhase, SortKey } from './types';
 
 export const PHASE_ORDER: (LaunchPhase | null)[] = [null, 'P1', 'P2', 'P3'];
 
@@ -102,7 +102,8 @@ export function statusOptions(candles: Candle[]): string[] {
 }
 
 export function secondaryStatusOptions(candles: Candle[]): string[] {
-  const set = new Set(candles.map((d) => (d.secondary_status || '').trim()).filter(Boolean));
+  const set = new Set<string>();
+  candles.forEach((d) => (d.secondary_statuses || []).forEach((s) => s.trim() && set.add(s.trim())));
   return ['All', ...Array.from(set).sort()];
 }
 
@@ -127,7 +128,10 @@ export interface CandleFilters {
 export function matchesFilters(c: Candle, filters: CandleFilters): boolean {
   const { statusFilters, secondaryFilters, familyFilter, searchTerm } = filters;
   if (statusFilters.size > 0 && !statusFilters.has((c.primary_status || '').trim())) return false;
-  if (secondaryFilters.size > 0 && !secondaryFilters.has((c.secondary_status || '').trim()))
+  if (
+    secondaryFilters.size > 0 &&
+    !(c.secondary_statuses || []).some((s) => secondaryFilters.has(s.trim()))
+  )
     return false;
   if (familyFilter && !(c.family || '').includes(familyFilter)) return false;
   if (searchTerm) {
@@ -156,7 +160,7 @@ export function blankCandle(): Omit<Candle, 'id' | 'created_at' | 'updated_at' |
     number: '',
     name: '',
     primary_status: 'Pending Creation',
-    secondary_status: '',
+    secondary_statuses: [],
     final_stamp: '',
     family: '',
     depth: '',
@@ -175,5 +179,42 @@ export function blankCandle(): Omit<Candle, 'id' | 'created_at' | 'updated_at' |
     color_override_hex: null,
     font_override_hex: null,
     launch_phase: null,
+    seasonal_tags: [],
   };
+}
+
+const PHASE_SORT_RANK: Record<string, number> = { P1: 0, P2: 1, P3: 2 };
+
+function naturalNumberCompare(a: string, b: string): number {
+  const parse = (s: string) => {
+    const match = s.trim().match(/^(\d+)/);
+    return match ? parseInt(match[1], 10) : Number.POSITIVE_INFINITY;
+  };
+  const diff = parse(a) - parse(b);
+  if (diff !== 0) return diff;
+  return a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' });
+}
+
+export function sortCandles(candles: Candle[], sortKey: SortKey): Candle[] {
+  const sorted = [...candles];
+  switch (sortKey) {
+    case 'name':
+      sorted.sort((a, b) => (a.name || '').localeCompare(b.name || '', undefined, { sensitivity: 'base' }));
+      break;
+    case 'number':
+      sorted.sort((a, b) => naturalNumberCompare(a.number || '', b.number || ''));
+      break;
+    case 'launch_phase':
+      sorted.sort((a, b) => {
+        const rankA = a.launch_phase ? PHASE_SORT_RANK[a.launch_phase] : 3;
+        const rankB = b.launch_phase ? PHASE_SORT_RANK[b.launch_phase] : 3;
+        if (rankA !== rankB) return rankA - rankB;
+        return naturalNumberCompare(a.number || '', b.number || '');
+      });
+      break;
+    case 'updated_at':
+      sorted.sort((a, b) => new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime());
+      break;
+  }
+  return sorted;
 }

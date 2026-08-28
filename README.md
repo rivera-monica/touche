@@ -32,13 +32,25 @@ parent's card.
 Go to [supabase.com](https://supabase.com), create a new project, and open
 **Settings → API** to get your project URL and keys.
 
-### 2. Run the schema migration
+### 2. Run the schema migrations
 
-Open the Supabase SQL Editor and run the contents of
-`supabase/migrations/0001_init.sql`. This creates the `candles` table, its
-indexes, the `updated_at`/`updated_by` triggers, Row Level Security
-policies (any signed-in user can read/write — see below), and enables
-Realtime on the table.
+Open the Supabase SQL Editor and run each file in `supabase/migrations/`,
+**in order**, as its own query:
+
+1. `0001_init.sql` — creates the `candles` table, its indexes, the
+   `updated_at`/`updated_by` triggers, Row Level Security policies (any
+   signed-in user can read/write — see below), and enables Realtime.
+2. `0002_add_seasonal_tags.sql` — adds the `seasonal_tags` column (a text
+   array) used for the card-front seasonal badges.
+3. `0003_multi_secondary_status.sql` — converts `secondary_status` (one
+   value) into `secondary_statuses` (an array), so a candle can carry more
+   than one at once. Preserves any existing secondary status as a
+   one-element array before dropping the old column.
+
+On a brand-new project just run them both back to back. On a project that
+already ran `0001_init.sql` in production, only run the new one(s) — each
+migration is written to be safe to run on its own, and safe to re-run if
+you're ever unsure whether it already applied.
 
 ### 3. Create accounts for your team
 
@@ -110,7 +122,8 @@ in step 3.
 - Suranna font for candle names, same oxblood/brass/cream palette
 - Dual status system: primary (Fill / Kill / Pending Creation / Revisit) +
   secondary (Re-smell / Review Throw / Review Wick / Review Melt / Check
-  For Overlaps / Dead / Check Complete)
+  For Overlaps / Dead / Check Complete) — secondary status can hold more
+  than one at once, see "Added since the original dashboard" below
 - P1/P2/P3 launch-phase bubble, top right of each card, cycles on click
 - "Descended from #X" badge + "→ Inspired #Y, #Z" list, both click-to-jump
 - Search by name, number, or ingredient; filter by primary status,
@@ -121,6 +134,20 @@ in step 3.
 - Stats bar: total / active / killed
 - "Reset data" — restores the original 73-candle import for the whole team
   (destructive; confirms first)
+
+## Added since the original dashboard
+
+- **Seasonal tags** — up to 3 free-text labels per candle (e.g. "Holiday",
+  "Valentine's", "Summer Launch"), added/removed in the recipe modal and
+  shown as brass badges on the card front, next to the status badges
+- **Sort** — a dropdown next to the scent-family filter: name (A–Z), candle
+  number, launch phase (P1 → P2 → P3, unset last), or recently updated
+- **Multi-select secondary status** — the recipe modal's secondary status
+  dropdown now allows selecting more than one (⌘/Ctrl-click, or Shift-click
+  for a range), so a candle can carry more than one at once (e.g. both
+  "Re-smell" and "Review Throw"); the card front shows a badge per status,
+  and the secondary-status filter chips match a candle that has *any* of
+  the active chips selected
 
 ## Project structure
 
@@ -141,6 +168,8 @@ lib/
   supabase/                 Browser + server Supabase clients
 supabase/
   migrations/0001_init.sql    Schema, RLS, triggers, realtime
+  migrations/0002_add_seasonal_tags.sql   Adds the seasonal_tags column
+  migrations/0003_multi_secondary_status.sql   secondary_status -> secondary_statuses[]
   seed-data.json                The original 73 candles, ready to seed
 scripts/seed.mjs                 Seed script (service role key)
 proxy.ts                          Session refresh + auth route protection
