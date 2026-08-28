@@ -102,18 +102,6 @@ export default function CandleModal({
     setForm((f) => ({ ...f, seasonal_tags: f.seasonal_tags.filter((_, idx) => idx !== i) }));
   }
 
-  function toggleSecondaryStatus(status: string) {
-    setForm((f) => {
-      const has = f.secondary_statuses.includes(status);
-      return {
-        ...f,
-        secondary_statuses: has
-          ? f.secondary_statuses.filter((s) => s !== status)
-          : [...f.secondary_statuses, status],
-      };
-    });
-  }
-
   function addSeasonalTag() {
     setForm((f) =>
       f.seasonal_tags.length >= MAX_SEASONAL_TAGS
@@ -259,18 +247,22 @@ export default function CandleModal({
 
         <div className="field">
           <label>Secondary statuses</label>
-          <div className="checkbox-grid">
+          <select
+            multiple
+            size={SECONDARY_STATUSES.length}
+            value={form.secondary_statuses}
+            onChange={(e) => {
+              const values = Array.from(e.target.selectedOptions, (o) => o.value);
+              updateField('secondary_statuses', values);
+            }}
+          >
             {SECONDARY_STATUSES.map((s) => (
-              <label className="checkbox-option" key={s}>
-                <input
-                  type="checkbox"
-                  checked={form.secondary_statuses.includes(s)}
-                  onChange={() => toggleSecondaryStatus(s)}
-                />
+              <option key={s} value={s}>
                 {s}
-              </label>
+              </option>
             ))}
-          </div>
+          </select>
+          <div className="field-hint">Hold ⌘/Ctrl (or Shift for a range) to select more than one.</div>
         </div>
 
         <div className="field">

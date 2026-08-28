@@ -142,11 +142,12 @@ in step 3.
   shown as brass badges on the card front, next to the status badges
 - **Sort** — a dropdown next to the scent-family filter: name (A–Z), candle
   number, launch phase (P1 → P2 → P3, unset last), or recently updated
-- **Multi-select secondary status** — the recipe modal now uses checkboxes
-  instead of a single dropdown, so a candle can carry more than one
-  secondary status at once (e.g. both "Re-smell" and "Review Throw"); the
-  card front shows a badge per status, and the secondary-status filter
-  chips match a candle that has *any* of the active chips selected
+- **Multi-select secondary status** — the recipe modal's secondary status
+  dropdown now allows selecting more than one (⌘/Ctrl-click, or Shift-click
+  for a range), so a candle can carry more than one at once (e.g. both
+  "Re-smell" and "Review Throw"); the card front shows a badge per status,
+  and the secondary-status filter chips match a candle that has *any* of
+  the active chips selected
 
 ## Project structure
 
