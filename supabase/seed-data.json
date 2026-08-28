@@ -30,7 +30,7 @@
     "primary_status": "Pending Creation",
     "secondary_status": "",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 1,
@@ -60,7 +60,7 @@
     "primary_status": "Pending Creation",
     "secondary_status": "",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 2,
@@ -89,7 +89,7 @@
     "primary_status": "Kill",
     "secondary_status": "",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 3,
@@ -117,7 +117,7 @@
     "primary_status": "Kill",
     "secondary_status": "",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 4,
@@ -146,7 +146,7 @@
     "primary_status": "Fill",
     "secondary_status": "",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 5,
@@ -174,7 +174,7 @@
     "primary_status": "Fill",
     "secondary_status": "",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 6,
@@ -203,7 +203,7 @@
     "primary_status": "Kill",
     "secondary_status": "",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 7,
@@ -232,7 +232,7 @@
     "primary_status": "Fill",
     "secondary_status": "",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 8,
@@ -262,7 +262,7 @@
     "primary_status": "Fill",
     "secondary_status": "",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 9,
@@ -291,7 +291,7 @@
     "primary_status": "Fill",
     "secondary_status": "",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 10,
@@ -319,7 +319,7 @@
     "primary_status": "Kill",
     "secondary_status": "",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 11,
@@ -348,7 +348,7 @@
     "primary_status": "Kill",
     "secondary_status": "",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 12,
@@ -378,7 +378,7 @@
     "primary_status": "Kill",
     "secondary_status": "",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 13,
@@ -407,7 +407,7 @@
     "primary_status": "Fill",
     "secondary_status": "",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 14,
@@ -437,7 +437,7 @@
     "primary_status": "Kill",
     "secondary_status": "",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 15,
@@ -467,7 +467,7 @@
     "primary_status": "Fill",
     "secondary_status": "",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 16,
@@ -495,7 +495,7 @@
     "primary_status": "Kill",
     "secondary_status": "",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 17,
@@ -525,7 +525,7 @@
     "primary_status": "Fill",
     "secondary_status": "",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 18,
@@ -551,7 +551,7 @@
     "primary_status": "Pending Creation",
     "secondary_status": "",
     "derived_from": "27",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 19,
@@ -581,7 +581,7 @@
     "primary_status": "Fill",
     "secondary_status": "",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 20,
@@ -610,7 +610,7 @@
     "primary_status": "Kill",
     "secondary_status": "",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 21,
@@ -640,7 +640,7 @@
     "primary_status": "Kill",
     "secondary_status": "",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 22,
@@ -670,7 +670,7 @@
     "primary_status": "Revisit",
     "secondary_status": "",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 23,
@@ -699,7 +699,7 @@
     "primary_status": "Kill",
     "secondary_status": "",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 24,
@@ -728,7 +728,7 @@
     "primary_status": "Kill",
     "secondary_status": "",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 25,
@@ -757,7 +757,7 @@
     "primary_status": "Fill",
     "secondary_status": "",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 26,
@@ -787,7 +787,7 @@
     "primary_status": "Kill",
     "secondary_status": "",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 27,
@@ -818,7 +818,7 @@
     "primary_status": "Kill",
     "secondary_status": "",
     "derived_from": "27",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 28,
@@ -848,7 +848,7 @@
     "primary_status": "Kill",
     "secondary_status": "",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 29,
@@ -877,7 +877,7 @@
     "primary_status": "Pending Creation",
     "secondary_status": "",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 30,
@@ -907,7 +907,7 @@
     "primary_status": "Revisit",
     "secondary_status": "",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 31,
@@ -939,7 +939,7 @@
     "primary_status": "Fill",
     "secondary_status": "",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 32,
@@ -969,7 +969,7 @@
     "primary_status": "Fill",
     "secondary_status": "",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 33,
@@ -1000,7 +1000,7 @@
     "primary_status": "Fill",
     "secondary_status": "",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 34,
@@ -1032,7 +1032,7 @@
     "primary_status": "Fill",
     "secondary_status": "",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 35,
@@ -1060,7 +1060,7 @@
     "primary_status": "Kill",
     "secondary_status": "",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 36,
@@ -1088,7 +1088,7 @@
     "primary_status": "Fill",
     "secondary_status": "",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 37,
@@ -1117,7 +1117,7 @@
     "primary_status": "Fill",
     "secondary_status": "Check Complete",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 38,
@@ -1147,7 +1147,7 @@
     "primary_status": "Kill",
     "secondary_status": "",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 39,
@@ -1176,7 +1176,7 @@
     "primary_status": "Kill",
     "secondary_status": "",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 40,
@@ -1205,7 +1205,7 @@
     "primary_status": "Kill",
     "secondary_status": "",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 41,
@@ -1236,7 +1236,7 @@
     "primary_status": "Revisit",
     "secondary_status": "",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 42,
@@ -1264,7 +1264,7 @@
     "primary_status": "Kill",
     "secondary_status": "",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 43,
@@ -1296,7 +1296,7 @@
     "primary_status": "Fill",
     "secondary_status": "",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 44,
@@ -1325,7 +1325,7 @@
     "primary_status": "Kill",
     "secondary_status": "",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 45,
@@ -1354,7 +1354,7 @@
     "primary_status": "Revisit",
     "secondary_status": "",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 46,
@@ -1382,7 +1382,7 @@
     "primary_status": "Kill",
     "secondary_status": "",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 47,
@@ -1413,7 +1413,7 @@
     "primary_status": "Revisit",
     "secondary_status": "",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 48,
@@ -1442,7 +1442,7 @@
     "primary_status": "Pending Creation",
     "secondary_status": "",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 49,
@@ -1474,7 +1474,7 @@
     "primary_status": "Revisit",
     "secondary_status": "",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 50,
@@ -1503,7 +1503,7 @@
     "primary_status": "Revisit",
     "secondary_status": "",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 51,
@@ -1533,7 +1533,7 @@
     "primary_status": "Revisit",
     "secondary_status": "",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 52,
@@ -1562,7 +1562,7 @@
     "primary_status": "Kill",
     "secondary_status": "",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 53,
@@ -1593,7 +1593,7 @@
     "primary_status": "Pending Creation",
     "secondary_status": "",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 54,
@@ -1624,7 +1624,7 @@
     "primary_status": "Pending Creation",
     "secondary_status": "",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 55,
@@ -1654,7 +1654,7 @@
     "primary_status": "Pending Creation",
     "secondary_status": "",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 56,
@@ -1683,7 +1683,7 @@
     "primary_status": "Pending Creation",
     "secondary_status": "",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 57,
@@ -1712,7 +1712,7 @@
     "primary_status": "Pending Creation",
     "secondary_status": "",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 58,
@@ -1742,7 +1742,7 @@
     "primary_status": "Pending Creation",
     "secondary_status": "",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 59,
@@ -1771,7 +1771,7 @@
     "primary_status": "Fill",
     "secondary_status": "Re-smell",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 60,
@@ -1802,7 +1802,7 @@
     "primary_status": "Fill",
     "secondary_status": "",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 61,
@@ -1834,7 +1834,7 @@
     "primary_status": "Fill",
     "secondary_status": "",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 62,
@@ -1863,7 +1863,7 @@
     "primary_status": "Fill",
     "secondary_status": "Re-smell",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 63,
@@ -1893,7 +1893,7 @@
     "primary_status": "Pending Creation",
     "secondary_status": "",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 64,
@@ -1922,7 +1922,7 @@
     "primary_status": "Pending Creation",
     "secondary_status": "",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 65,
@@ -1954,7 +1954,7 @@
     "primary_status": "Kill",
     "secondary_status": "",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 66,
@@ -1984,7 +1984,7 @@
     "primary_status": "Pending Creation",
     "secondary_status": "Re-smell",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 67,
@@ -2013,7 +2013,7 @@
     "primary_status": "Pending Creation",
     "secondary_status": "",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 68,
@@ -2043,7 +2043,7 @@
     "primary_status": "Pending Creation",
     "secondary_status": "",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 69,
@@ -2073,7 +2073,7 @@
     "primary_status": "Pending Creation",
     "secondary_status": "",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 70,
@@ -2102,7 +2102,7 @@
     "primary_status": "Pending Creation",
     "secondary_status": "",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 71,
@@ -2131,7 +2131,7 @@
     "primary_status": "Pending Creation",
     "secondary_status": "",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   },
   {
     "sort_order": 72,
@@ -2162,6 +2162,6 @@
     "primary_status": "Pending Creation",
     "secondary_status": "",
     "derived_from": "",
-    "seasonal_tag": ""
+    "seasonal_tags": []
   }
 ]

@@ -40,8 +40,8 @@ Open the Supabase SQL Editor and run each file in `supabase/migrations/`,
 1. `0001_init.sql` — creates the `candles` table, its indexes, the
    `updated_at`/`updated_by` triggers, Row Level Security policies (any
    signed-in user can read/write — see below), and enables Realtime.
-2. `0002_add_seasonal_tag.sql` — adds the `seasonal_tag` column used for the
-   card-front seasonal badge.
+2. `0002_add_seasonal_tags.sql` — adds the `seasonal_tags` column (a text
+   array) used for the card-front seasonal badges.
 
 On a brand-new project just run them both back to back. On a project that
 already ran `0001_init.sql` in production, only run the new one(s) — each
@@ -132,9 +132,9 @@ in step 3.
 
 ## Added since the original dashboard
 
-- **Seasonal tag** — a free-text label (e.g. "Holiday", "Summer Launch") set
-  in the recipe modal and shown as a brass badge on the card front, next to
-  the status badges
+- **Seasonal tags** — up to 3 free-text labels per candle (e.g. "Holiday",
+  "Valentine's", "Summer Launch"), added/removed in the recipe modal and
+  shown as brass badges on the card front, next to the status badges
 - **Sort** — a dropdown next to the scent-family filter: name (A–Z), candle
   number, launch phase (P1 → P2 → P3, unset last), or recently updated
 
@@ -157,7 +157,7 @@ lib/
   supabase/                 Browser + server Supabase clients
 supabase/
   migrations/0001_init.sql    Schema, RLS, triggers, realtime
-  migrations/0002_add_seasonal_tag.sql   Adds the seasonal_tag column
+  migrations/0002_add_seasonal_tags.sql   Adds the seasonal_tags column
   seed-data.json                The original 73 candles, ready to seed
 scripts/seed.mjs                 Seed script (service role key)
 proxy.ts                          Session refresh + auth route protection

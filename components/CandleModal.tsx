@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import type { Candle, CandleDraft } from '@/lib/types';
-import { PRIMARY_STATUSES, SECONDARY_STATUSES } from '@/lib/types';
+import { MAX_SEASONAL_TAGS, PRIMARY_STATUSES, SECONDARY_STATUSES } from '@/lib/types';
 import { getChildren } from '@/lib/candleHelpers';
 
 interface FormState {
@@ -22,7 +22,7 @@ interface FormState {
   tempCombined: string;
   depth: string;
   notes: string;
-  seasonal_tag: string;
+  seasonal_tags: string[];
 }
 
 function toFormState(c: Candle | CandleDraft): FormState {
@@ -43,7 +43,7 @@ function toFormState(c: Candle | CandleDraft): FormState {
     tempCombined: (c.pour_temp || '') + (c.add_temp ? ' / ' + c.add_temp : ''),
     depth: c.depth,
     notes: c.notes,
-    seasonal_tag: c.seasonal_tag || '',
+    seasonal_tags: c.seasonal_tags || [],
   };
 }
 
@@ -90,6 +90,26 @@ export default function CandleModal({
     setForm((f) => ({ ...f, ingredients: [...f.ingredients, ''] }));
   }
 
+  function updateSeasonalTag(i: number, value: string) {
+    setForm((f) => {
+      const next = [...f.seasonal_tags];
+      next[i] = value;
+      return { ...f, seasonal_tags: next };
+    });
+  }
+
+  function removeSeasonalTag(i: number) {
+    setForm((f) => ({ ...f, seasonal_tags: f.seasonal_tags.filter((_, idx) => idx !== i) }));
+  }
+
+  function addSeasonalTag() {
+    setForm((f) =>
+      f.seasonal_tags.length >= MAX_SEASONAL_TAGS
+        ? f
+        : { ...f, seasonal_tags: [...f.seasonal_tags, ''] }
+    );
+  }
+
   async function handleSave() {
     setSaving(true);
     try {
@@ -112,7 +132,7 @@ export default function CandleModal({
         add_temp: add || '',
         depth: form.depth.trim(),
         notes: form.notes.trim(),
-        seasonal_tag: form.seasonal_tag.trim(),
+        seasonal_tags: form.seasonal_tags.map((t) => t.trim()).filter(Boolean).slice(0, MAX_SEASONAL_TAGS),
         pending_retest: false,
       };
       await onSave(draft, candle ? candle.id : null);
@@ -173,15 +193,42 @@ export default function CandleModal({
               onChange={(e) => updateField('final_stamp', e.target.value)}
             />
           </div>
-          <div className="field">
-            <label>Seasonal tag</label>
-            <input
-              type="text"
-              placeholder="e.g. Holiday"
-              value={form.seasonal_tag}
-              onChange={(e) => updateField('seasonal_tag', e.target.value)}
-            />
+          <div className="field"></div>
+        </div>
+
+        <div className="field">
+          <label>Seasonal tags</label>
+          <div>
+            {form.seasonal_tags.map((tag, i) => (
+              <div className="ing-row" key={i}>
+                <input
+                  type="text"
+                  placeholder="e.g. Holiday"
+                  value={tag}
+                  onChange={(e) => updateSeasonalTag(i, e.target.value)}
+                />
+                <button
+                  className="ing-remove"
+                  type="button"
+                  onClick={() => removeSeasonalTag(i)}
+                >
+                  &times;
+                </button>
+              </div>
+            ))}
           </div>
+          {form.seasonal_tags.length < MAX_SEASONAL_TAGS ? (
+            <button
+              className="btn ghost"
+              type="button"
+              style={{ marginTop: '4px' }}
+              onClick={addSeasonalTag}
+            >
+              + Add tag
+            </button>
+          ) : (
+            <div className="field-hint">Limit of {MAX_SEASONAL_TAGS} tags</div>
+          )}
         </div>
 
         <div className="row2">
@@ -371,6 +418,6 @@ function blankDraft(): CandleDraft {
     color_override_hex: null,
     font_override_hex: null,
     launch_phase: null,
-    seasonal_tag: '',
+    seasonal_tags: [],
   };
 }

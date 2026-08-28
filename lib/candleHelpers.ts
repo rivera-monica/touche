@@ -175,7 +175,7 @@ export function blankCandle(): Omit<Candle, 'id' | 'created_at' | 'updated_at' |
     color_override_hex: null,
     font_override_hex: null,
     launch_phase: null,
-    seasonal_tag: '',
+    seasonal_tags: [],
   };
 }
 
