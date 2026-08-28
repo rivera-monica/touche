@@ -338,6 +338,10 @@ select {
   background: var(--green-light);
   color: var(--green);
 }
+.badge.seasonal {
+  background: var(--brass-light);
+  color: var(--brass);
+}
 .badge-row {
   display: flex;
   gap: 6px;

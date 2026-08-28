@@ -22,6 +22,7 @@ interface FormState {
   tempCombined: string;
   depth: string;
   notes: string;
+  seasonal_tag: string;
 }
 
 function toFormState(c: Candle | CandleDraft): FormState {
@@ -42,6 +43,7 @@ function toFormState(c: Candle | CandleDraft): FormState {
     tempCombined: (c.pour_temp || '') + (c.add_temp ? ' / ' + c.add_temp : ''),
     depth: c.depth,
     notes: c.notes,
+    seasonal_tag: c.seasonal_tag || '',
   };
 }
 
@@ -110,6 +112,7 @@ export default function CandleModal({
         add_temp: add || '',
         depth: form.depth.trim(),
         notes: form.notes.trim(),
+        seasonal_tag: form.seasonal_tag.trim(),
         pending_retest: false,
       };
       await onSave(draft, candle ? candle.id : null);
@@ -170,7 +173,15 @@ export default function CandleModal({
               onChange={(e) => updateField('final_stamp', e.target.value)}
             />
           </div>
-          <div className="field"></div>
+          <div className="field">
+            <label>Seasonal tag</label>
+            <input
+              type="text"
+              placeholder="e.g. Holiday"
+              value={form.seasonal_tag}
+              onChange={(e) => updateField('seasonal_tag', e.target.value)}
+            />
+          </div>
         </div>
 
         <div className="row2">
@@ -360,5 +371,6 @@ function blankDraft(): CandleDraft {
     color_override_hex: null,
     font_override_hex: null,
     launch_phase: null,
+    seasonal_tag: '',
   };
 }

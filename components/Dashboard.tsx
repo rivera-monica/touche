@@ -2,13 +2,15 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { createClient } from '@/lib/supabase/client';
-import type { Candle } from '@/lib/types';
+import type { Candle, SortKey } from '@/lib/types';
+import { SORT_OPTIONS } from '@/lib/types';
 import {
   familyOptions,
   findByNumber,
   matchesFilters,
   nextPhase,
   secondaryStatusOptions,
+  sortCandles,
   statusOptions,
 } from '@/lib/candleHelpers';
 import CandleCard from './CandleCard';
@@ -31,6 +33,7 @@ export default function Dashboard({
   const [secondaryFilters, setSecondaryFilters] = useState<Set<string>>(new Set());
   const [familyFilter, setFamilyFilter] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
+  const [sortKey, setSortKey] = useState<SortKey>('number');
   const [modal, setModal] = useState<ModalState>(null);
   const [toast, setToast] = useState<{ message: string; show: boolean }>({
     message: '',
@@ -76,10 +79,13 @@ export default function Dashboard({
 
   const filtered = useMemo(
     () =>
-      candles.filter((c) =>
-        matchesFilters(c, { statusFilters, secondaryFilters, familyFilter, searchTerm })
+      sortCandles(
+        candles.filter((c) =>
+          matchesFilters(c, { statusFilters, secondaryFilters, familyFilter, searchTerm })
+        ),
+        sortKey
       ),
-    [candles, statusFilters, secondaryFilters, familyFilter, searchTerm]
+    [candles, statusFilters, secondaryFilters, familyFilter, searchTerm, sortKey]
   );
 
   const total = candles.length;
@@ -249,6 +255,13 @@ export default function Dashboard({
           {familyOptions(candles).map((f) => (
             <option key={f} value={f}>
               {f}
+            </option>
+          ))}
+        </select>
+        <select value={sortKey} onChange={(e) => setSortKey(e.target.value as SortKey)}>
+          {SORT_OPTIONS.map((o) => (
+            <option key={o.value} value={o.value}>
+              Sort: {o.label}
             </option>
           ))}
         </select>

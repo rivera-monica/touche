@@ -32,13 +32,21 @@ parent's card.
 Go to [supabase.com](https://supabase.com), create a new project, and open
 **Settings → API** to get your project URL and keys.
 
-### 2. Run the schema migration
+### 2. Run the schema migrations
 
-Open the Supabase SQL Editor and run the contents of
-`supabase/migrations/0001_init.sql`. This creates the `candles` table, its
-indexes, the `updated_at`/`updated_by` triggers, Row Level Security
-policies (any signed-in user can read/write — see below), and enables
-Realtime on the table.
+Open the Supabase SQL Editor and run each file in `supabase/migrations/`,
+**in order**, as its own query:
+
+1. `0001_init.sql` — creates the `candles` table, its indexes, the
+   `updated_at`/`updated_by` triggers, Row Level Security policies (any
+   signed-in user can read/write — see below), and enables Realtime.
+2. `0002_add_seasonal_tag.sql` — adds the `seasonal_tag` column used for the
+   card-front seasonal badge.
+
+On a brand-new project just run them both back to back. On a project that
+already ran `0001_init.sql` in production, only run the new one(s) — each
+migration is written to be safe to run on its own, and safe to re-run if
+you're ever unsure whether it already applied.
 
 ### 3. Create accounts for your team
 
@@ -122,6 +130,14 @@ in step 3.
 - "Reset data" — restores the original 73-candle import for the whole team
   (destructive; confirms first)
 
+## Added since the original dashboard
+
+- **Seasonal tag** — a free-text label (e.g. "Holiday", "Summer Launch") set
+  in the recipe modal and shown as a brass badge on the card front, next to
+  the status badges
+- **Sort** — a dropdown next to the scent-family filter: name (A–Z), candle
+  number, launch phase (P1 → P2 → P3, unset last), or recently updated
+
 ## Project structure
 
 ```
@@ -141,6 +157,7 @@ lib/
   supabase/                 Browser + server Supabase clients
 supabase/
   migrations/0001_init.sql    Schema, RLS, triggers, realtime
+  migrations/0002_add_seasonal_tag.sql   Adds the seasonal_tag column
   seed-data.json                The original 73 candles, ready to seed
 scripts/seed.mjs                 Seed script (service role key)
 proxy.ts                          Session refresh + auth route protection

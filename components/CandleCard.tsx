@@ -97,6 +97,7 @@ export default function CandleCard({
             {c.secondary_status}
           </span>
         ) : null}
+        {c.seasonal_tag ? <span className="badge seasonal">{c.seasonal_tag}</span> : null}
       </div>
 
       <div className="card-family" style={{ color: hasLabel ? soft : 'var(--ink-soft)' }}>
