@@ -28,9 +28,9 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Pending Creation",
-    "secondary_status": "",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": []
   },
   {
     "sort_order": 1,
@@ -58,9 +58,9 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Pending Creation",
-    "secondary_status": "",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": []
   },
   {
     "sort_order": 2,
@@ -87,9 +87,9 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Kill",
-    "secondary_status": "",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": []
   },
   {
     "sort_order": 3,
@@ -115,9 +115,9 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Kill",
-    "secondary_status": "",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": []
   },
   {
     "sort_order": 4,
@@ -144,9 +144,9 @@
     "font_override_hex": "#7A5A3C",
     "launch_phase": null,
     "primary_status": "Fill",
-    "secondary_status": "",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": []
   },
   {
     "sort_order": 5,
@@ -172,9 +172,9 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Fill",
-    "secondary_status": "",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": []
   },
   {
     "sort_order": 6,
@@ -201,9 +201,9 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Kill",
-    "secondary_status": "",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": []
   },
   {
     "sort_order": 7,
@@ -230,9 +230,9 @@
     "font_override_hex": "#B0E0E6",
     "launch_phase": null,
     "primary_status": "Fill",
-    "secondary_status": "",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": []
   },
   {
     "sort_order": 8,
@@ -260,9 +260,9 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Fill",
-    "secondary_status": "",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": []
   },
   {
     "sort_order": 9,
@@ -289,9 +289,9 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Fill",
-    "secondary_status": "",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": []
   },
   {
     "sort_order": 10,
@@ -317,9 +317,9 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Kill",
-    "secondary_status": "",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": []
   },
   {
     "sort_order": 11,
@@ -346,9 +346,9 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Kill",
-    "secondary_status": "",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": []
   },
   {
     "sort_order": 12,
@@ -376,9 +376,9 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Kill",
-    "secondary_status": "",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": []
   },
   {
     "sort_order": 13,
@@ -405,9 +405,9 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Fill",
-    "secondary_status": "",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": []
   },
   {
     "sort_order": 14,
@@ -435,9 +435,9 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Kill",
-    "secondary_status": "",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": []
   },
   {
     "sort_order": 15,
@@ -465,9 +465,9 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Fill",
-    "secondary_status": "",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": []
   },
   {
     "sort_order": 16,
@@ -493,9 +493,9 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Kill",
-    "secondary_status": "",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": []
   },
   {
     "sort_order": 17,
@@ -523,9 +523,9 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Fill",
-    "secondary_status": "",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": []
   },
   {
     "sort_order": 18,
@@ -549,9 +549,9 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Pending Creation",
-    "secondary_status": "",
     "derived_from": "27",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": []
   },
   {
     "sort_order": 19,
@@ -579,9 +579,9 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Fill",
-    "secondary_status": "",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": []
   },
   {
     "sort_order": 20,
@@ -608,9 +608,9 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Kill",
-    "secondary_status": "",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": []
   },
   {
     "sort_order": 21,
@@ -638,9 +638,9 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Kill",
-    "secondary_status": "",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": []
   },
   {
     "sort_order": 22,
@@ -668,9 +668,9 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Revisit",
-    "secondary_status": "",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": []
   },
   {
     "sort_order": 23,
@@ -697,9 +697,9 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Kill",
-    "secondary_status": "",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": []
   },
   {
     "sort_order": 24,
@@ -726,9 +726,9 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Kill",
-    "secondary_status": "",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": []
   },
   {
     "sort_order": 25,
@@ -755,9 +755,9 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Fill",
-    "secondary_status": "",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": []
   },
   {
     "sort_order": 26,
@@ -785,9 +785,9 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Kill",
-    "secondary_status": "",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": []
   },
   {
     "sort_order": 27,
@@ -816,9 +816,9 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Kill",
-    "secondary_status": "",
     "derived_from": "27",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": []
   },
   {
     "sort_order": 28,
@@ -846,9 +846,9 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Kill",
-    "secondary_status": "",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": []
   },
   {
     "sort_order": 29,
@@ -875,9 +875,9 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Pending Creation",
-    "secondary_status": "",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": []
   },
   {
     "sort_order": 30,
@@ -905,9 +905,9 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Revisit",
-    "secondary_status": "",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": []
   },
   {
     "sort_order": 31,
@@ -937,9 +937,9 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Fill",
-    "secondary_status": "",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": []
   },
   {
     "sort_order": 32,
@@ -967,9 +967,9 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Fill",
-    "secondary_status": "",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": []
   },
   {
     "sort_order": 33,
@@ -998,9 +998,9 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Fill",
-    "secondary_status": "",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": []
   },
   {
     "sort_order": 34,
@@ -1030,9 +1030,9 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Fill",
-    "secondary_status": "",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": []
   },
   {
     "sort_order": 35,
@@ -1058,9 +1058,9 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Kill",
-    "secondary_status": "",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": []
   },
   {
     "sort_order": 36,
@@ -1086,9 +1086,9 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Fill",
-    "secondary_status": "",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": []
   },
   {
     "sort_order": 37,
@@ -1115,9 +1115,11 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Fill",
-    "secondary_status": "Check Complete",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": [
+      "Check Complete"
+    ]
   },
   {
     "sort_order": 38,
@@ -1145,9 +1147,9 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Kill",
-    "secondary_status": "",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": []
   },
   {
     "sort_order": 39,
@@ -1174,9 +1176,9 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Kill",
-    "secondary_status": "",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": []
   },
   {
     "sort_order": 40,
@@ -1203,9 +1205,9 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Kill",
-    "secondary_status": "",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": []
   },
   {
     "sort_order": 41,
@@ -1234,9 +1236,9 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Revisit",
-    "secondary_status": "",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": []
   },
   {
     "sort_order": 42,
@@ -1262,9 +1264,9 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Kill",
-    "secondary_status": "",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": []
   },
   {
     "sort_order": 43,
@@ -1294,9 +1296,9 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Fill",
-    "secondary_status": "",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": []
   },
   {
     "sort_order": 44,
@@ -1323,9 +1325,9 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Kill",
-    "secondary_status": "",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": []
   },
   {
     "sort_order": 45,
@@ -1352,9 +1354,9 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Revisit",
-    "secondary_status": "",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": []
   },
   {
     "sort_order": 46,
@@ -1380,9 +1382,9 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Kill",
-    "secondary_status": "",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": []
   },
   {
     "sort_order": 47,
@@ -1411,9 +1413,9 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Revisit",
-    "secondary_status": "",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": []
   },
   {
     "sort_order": 48,
@@ -1440,9 +1442,9 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Pending Creation",
-    "secondary_status": "",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": []
   },
   {
     "sort_order": 49,
@@ -1472,9 +1474,9 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Revisit",
-    "secondary_status": "",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": []
   },
   {
     "sort_order": 50,
@@ -1501,9 +1503,9 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Revisit",
-    "secondary_status": "",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": []
   },
   {
     "sort_order": 51,
@@ -1531,9 +1533,9 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Revisit",
-    "secondary_status": "",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": []
   },
   {
     "sort_order": 52,
@@ -1560,9 +1562,9 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Kill",
-    "secondary_status": "",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": []
   },
   {
     "sort_order": 53,
@@ -1591,9 +1593,9 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Pending Creation",
-    "secondary_status": "",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": []
   },
   {
     "sort_order": 54,
@@ -1622,9 +1624,9 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Pending Creation",
-    "secondary_status": "",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": []
   },
   {
     "sort_order": 55,
@@ -1652,9 +1654,9 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Pending Creation",
-    "secondary_status": "",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": []
   },
   {
     "sort_order": 56,
@@ -1681,9 +1683,9 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Pending Creation",
-    "secondary_status": "",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": []
   },
   {
     "sort_order": 57,
@@ -1710,9 +1712,9 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Pending Creation",
-    "secondary_status": "",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": []
   },
   {
     "sort_order": 58,
@@ -1740,9 +1742,9 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Pending Creation",
-    "secondary_status": "",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": []
   },
   {
     "sort_order": 59,
@@ -1769,9 +1771,11 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Fill",
-    "secondary_status": "Re-smell",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": [
+      "Re-smell"
+    ]
   },
   {
     "sort_order": 60,
@@ -1800,9 +1804,9 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Fill",
-    "secondary_status": "",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": []
   },
   {
     "sort_order": 61,
@@ -1832,9 +1836,9 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Fill",
-    "secondary_status": "",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": []
   },
   {
     "sort_order": 62,
@@ -1861,9 +1865,11 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Fill",
-    "secondary_status": "Re-smell",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": [
+      "Re-smell"
+    ]
   },
   {
     "sort_order": 63,
@@ -1891,9 +1897,9 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Pending Creation",
-    "secondary_status": "",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": []
   },
   {
     "sort_order": 64,
@@ -1920,9 +1926,9 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Pending Creation",
-    "secondary_status": "",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": []
   },
   {
     "sort_order": 65,
@@ -1952,9 +1958,9 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Kill",
-    "secondary_status": "",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": []
   },
   {
     "sort_order": 66,
@@ -1982,9 +1988,11 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Pending Creation",
-    "secondary_status": "Re-smell",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": [
+      "Re-smell"
+    ]
   },
   {
     "sort_order": 67,
@@ -2011,9 +2019,9 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Pending Creation",
-    "secondary_status": "",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": []
   },
   {
     "sort_order": 68,
@@ -2041,9 +2049,9 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Pending Creation",
-    "secondary_status": "",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": []
   },
   {
     "sort_order": 69,
@@ -2071,9 +2079,9 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Pending Creation",
-    "secondary_status": "",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": []
   },
   {
     "sort_order": 70,
@@ -2100,9 +2108,9 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Pending Creation",
-    "secondary_status": "",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": []
   },
   {
     "sort_order": 71,
@@ -2129,9 +2137,9 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Pending Creation",
-    "secondary_status": "",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": []
   },
   {
     "sort_order": 72,
@@ -2160,8 +2168,8 @@
     "font_override_hex": null,
     "launch_phase": null,
     "primary_status": "Pending Creation",
-    "secondary_status": "",
     "derived_from": "",
-    "seasonal_tags": []
+    "seasonal_tags": [],
+    "secondary_statuses": []
   }
 ]

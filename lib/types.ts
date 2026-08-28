@@ -37,7 +37,7 @@ export type Candle = {
   font_override_hex: string | null;
   launch_phase: LaunchPhase | null;
   primary_status: string;
-  secondary_status: string;
+  secondary_statuses: string[];
   derived_from: string;
   seasonal_tags: string[];
   created_at: string;

@@ -9,7 +9,7 @@ interface FormState {
   number: string;
   name: string;
   primary_status: string;
-  secondary_status: string;
+  secondary_statuses: string[];
   final_stamp: string;
   family: string;
   derived_from: string;
@@ -30,7 +30,7 @@ function toFormState(c: Candle | CandleDraft): FormState {
     number: c.number,
     name: c.name,
     primary_status: c.primary_status || 'Pending Creation',
-    secondary_status: c.secondary_status || '',
+    secondary_statuses: c.secondary_statuses || [],
     final_stamp: c.final_stamp,
     family: c.family,
     derived_from: c.derived_from || '',
@@ -102,6 +102,18 @@ export default function CandleModal({
     setForm((f) => ({ ...f, seasonal_tags: f.seasonal_tags.filter((_, idx) => idx !== i) }));
   }
 
+  function toggleSecondaryStatus(status: string) {
+    setForm((f) => {
+      const has = f.secondary_statuses.includes(status);
+      return {
+        ...f,
+        secondary_statuses: has
+          ? f.secondary_statuses.filter((s) => s !== status)
+          : [...f.secondary_statuses, status],
+      };
+    });
+  }
+
   function addSeasonalTag() {
     setForm((f) =>
       f.seasonal_tags.length >= MAX_SEASONAL_TAGS
@@ -118,7 +130,7 @@ export default function CandleModal({
         number: form.number.trim(),
         name: form.name.trim(),
         primary_status: form.primary_status.trim(),
-        secondary_status: form.secondary_status.trim(),
+        secondary_statuses: form.secondary_statuses,
         final_stamp: form.final_stamp.trim(),
         family: form.family.trim(),
         derived_from: form.derived_from.trim(),
@@ -231,33 +243,33 @@ export default function CandleModal({
           )}
         </div>
 
-        <div className="row2">
-          <div className="field">
-            <label>Primary status</label>
-            <select
-              value={form.primary_status}
-              onChange={(e) => updateField('primary_status', e.target.value)}
-            >
-              {PRIMARY_STATUSES.map((s) => (
-                <option key={s} value={s}>
-                  {s}
-                </option>
-              ))}
-            </select>
-          </div>
-          <div className="field">
-            <label>Secondary status</label>
-            <select
-              value={form.secondary_status}
-              onChange={(e) => updateField('secondary_status', e.target.value)}
-            >
-              <option value="">— None —</option>
-              {SECONDARY_STATUSES.map((s) => (
-                <option key={s} value={s}>
-                  {s}
-                </option>
-              ))}
-            </select>
+        <div className="field">
+          <label>Primary status</label>
+          <select
+            value={form.primary_status}
+            onChange={(e) => updateField('primary_status', e.target.value)}
+          >
+            {PRIMARY_STATUSES.map((s) => (
+              <option key={s} value={s}>
+                {s}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        <div className="field">
+          <label>Secondary statuses</label>
+          <div className="checkbox-grid">
+            {SECONDARY_STATUSES.map((s) => (
+              <label className="checkbox-option" key={s}>
+                <input
+                  type="checkbox"
+                  checked={form.secondary_statuses.includes(s)}
+                  onChange={() => toggleSecondaryStatus(s)}
+                />
+                {s}
+              </label>
+            ))}
           </div>
         </div>
 
@@ -399,7 +411,7 @@ function blankDraft(): CandleDraft {
     number: '',
     name: '',
     primary_status: 'Pending Creation',
-    secondary_status: '',
+    secondary_statuses: [],
     final_stamp: '',
     family: '',
     depth: '',

@@ -102,7 +102,8 @@ export function statusOptions(candles: Candle[]): string[] {
 }
 
 export function secondaryStatusOptions(candles: Candle[]): string[] {
-  const set = new Set(candles.map((d) => (d.secondary_status || '').trim()).filter(Boolean));
+  const set = new Set<string>();
+  candles.forEach((d) => (d.secondary_statuses || []).forEach((s) => s.trim() && set.add(s.trim())));
   return ['All', ...Array.from(set).sort()];
 }
 
@@ -127,7 +128,10 @@ export interface CandleFilters {
 export function matchesFilters(c: Candle, filters: CandleFilters): boolean {
   const { statusFilters, secondaryFilters, familyFilter, searchTerm } = filters;
   if (statusFilters.size > 0 && !statusFilters.has((c.primary_status || '').trim())) return false;
-  if (secondaryFilters.size > 0 && !secondaryFilters.has((c.secondary_status || '').trim()))
+  if (
+    secondaryFilters.size > 0 &&
+    !(c.secondary_statuses || []).some((s) => secondaryFilters.has(s.trim()))
+  )
     return false;
   if (familyFilter && !(c.family || '').includes(familyFilter)) return false;
   if (searchTerm) {
@@ -156,7 +160,7 @@ export function blankCandle(): Omit<Candle, 'id' | 'created_at' | 'updated_at' |
     number: '',
     name: '',
     primary_status: 'Pending Creation',
-    secondary_status: '',
+    secondary_statuses: [],
     final_stamp: '',
     family: '',
     depth: '',
