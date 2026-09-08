@@ -29,7 +29,7 @@ export default function CandleCard({
 }) {
   const c = candle;
   const isKill = (c.primary_status || '').toLowerCase().includes('kill');
-  const hasLabel = !!(c.label && c.label.trim());
+  const hasLabel = !!(c.label && c.label.trim()) || !!c.color_override_hex;
   const hex = c.color_override_hex || labelColorHex(c.label);
   const ink = c.font_override_hex || contrastText(hex);
   const soft = c.font_override_hex || softText(hex);
