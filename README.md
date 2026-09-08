@@ -148,6 +148,11 @@ in step 3.
   "Re-smell" and "Review Throw"); the card front shows a badge per status,
   and the secondary-status filter chips match a candle that has *any* of
   the active chips selected
+- **Label color picker** — the recipe modal's "Label color override (hex)"
+  field now has a real color swatch/picker next to the hex text input,
+  showing the exact color the card will render (either your override or,
+  if left blank, the auto-match from the label name) instead of guessing
+  from a hex code typed blind
 
 ## Project structure
 
