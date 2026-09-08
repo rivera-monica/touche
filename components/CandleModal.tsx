@@ -3,7 +3,16 @@
 import { useState } from 'react';
 import type { Candle, CandleDraft } from '@/lib/types';
 import { MAX_SEASONAL_TAGS, PRIMARY_STATUSES, SECONDARY_STATUSES } from '@/lib/types';
-import { getChildren } from '@/lib/candleHelpers';
+import { getChildren, labelColorHex } from '@/lib/candleHelpers';
+
+const HEX_PATTERN = /^#[0-9a-fA-F]{6}$/;
+
+function normalizeHexInput(raw: string): string | null {
+  let v = raw.trim();
+  if (!v) return null;
+  if (!v.startsWith('#')) v = '#' + v;
+  return HEX_PATTERN.test(v) ? v.toUpperCase() : null;
+}
 
 interface FormState {
   number: string;
@@ -17,6 +26,7 @@ interface FormState {
   fragrance_load: string;
   batch_size: string;
   label: string;
+  color_override_hex: string;
   wax: string;
   wick: string;
   tempCombined: string;
@@ -38,6 +48,7 @@ function toFormState(c: Candle | CandleDraft): FormState {
     fragrance_load: c.fragrance_load,
     batch_size: c.batch_size,
     label: c.label,
+    color_override_hex: c.color_override_hex || '',
     wax: c.wax,
     wick: c.wick,
     tempCombined: (c.pour_temp || '') + (c.add_temp ? ' / ' + c.add_temp : ''),
@@ -126,6 +137,7 @@ export default function CandleModal({
         fragrance_load: form.fragrance_load.trim(),
         batch_size: form.batch_size.trim(),
         label: form.label.trim(),
+        color_override_hex: normalizeHexInput(form.color_override_hex),
         wax: form.wax.trim(),
         wick: form.wick.trim(),
         pour_temp: pour || '',
@@ -331,12 +343,38 @@ export default function CandleModal({
             />
           </div>
           <div className="field">
-            <label>Label color</label>
+            <label>Label name</label>
             <input
               type="text"
+              placeholder="e.g. Dough beige"
               value={form.label}
               onChange={(e) => updateField('label', e.target.value)}
             />
+          </div>
+        </div>
+
+        <div className="field">
+          <label>Label color override (hex)</label>
+          <div className="color-field-row">
+            <input
+              type="color"
+              value={
+                HEX_PATTERN.test(form.color_override_hex)
+                  ? form.color_override_hex
+                  : labelColorHex(form.label)
+              }
+              onChange={(e) => updateField('color_override_hex', e.target.value.toUpperCase())}
+            />
+            <input
+              type="text"
+              placeholder="e.g. #E6D9BE — leave blank to auto-match from the label name above"
+              value={form.color_override_hex}
+              onChange={(e) => updateField('color_override_hex', e.target.value)}
+            />
+          </div>
+          <div className="field-hint">
+            The swatch shows what the card will actually render — pick a color or type a hex code
+            to pin it exactly, or leave blank to auto-color from the label name above.
           </div>
         </div>
 
